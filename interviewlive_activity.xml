@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tb="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/interview_live_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tb:tb_background="@color/cp_bg_line_e" >
+
+    <!-- 顶部导航栏 -->
+    <LinearLayout
+        android:id="@+id/title_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <com.baidu.tbadk.core.view.NavigationBar
+            android:id="@+id/view_navigation_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+        </com.baidu.tbadk.core.view.NavigationBar>
+
+        <com.baidu.tbadk.core.view.NoNetworkView
+            android:id="@+id/view_no_network"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tb:tb_background="@drawable/bg_no_network" />
+    </LinearLayout>
+
+    <!--弹幕区-->
+    <FrameLayout
+        android:id="@+id/danmucontainer"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/ds240"
+        android:layout_below="@id/title_wrapper">
+
+    </FrameLayout>
+
+    <!--访谈区-->
+    <com.baidu.adp.widget.ListView.BdTypeListView
+        android:id="@+id/interview_live_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/danmucontainer"
+        android:layout_above="@+id/interview_comment_container"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbarThumbVertical="@drawable/custom_scrollbar"
+        android:divider="#FF000000"
+        android:dividerHeight="0dip"
+        android:fadingEdge="vertical"
+        android:fadingEdgeLength="0dp"
+        android:fastScrollEnabled="false"
+        android:listSelector="@android:color/transparent"
+        android:padding="0px"
+        android:smoothScrollbar="true"
+        android:visibility="gone"
+        tb:tb_background="@color/cp_bg_line_e" >
+    </com.baidu.adp.widget.ListView.BdTypeListView>
+
+    <LinearLayout
+            android:id="@+id/interview_comment_container"
+            android:layout_alignParentBottom="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+    </LinearLayout>
+
+</RelativeLayout>
